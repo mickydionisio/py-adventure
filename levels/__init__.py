@@ -1,4 +1,4 @@
-# this causes it to import all .py files in the parent folder
+# this imports all .py files in the parent folder
 
 import os
 import glob

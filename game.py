@@ -19,12 +19,19 @@ print "What is your name?"
 shared.player.name = raw_input(">>")
 print "-----"
 print "Welcome " + shared.player.name + "!"
-
+print "-----"
 
 # Initialize Levels & starting point
-lev = [level0.lev0, level1.lev1]
-curLevel = 0
 
+levels = [level0, level1]
+lev = []
+
+for lv in levels:
+	lev.append(lv.lev)
+
+#lev = [level0.lev, level1.lev]
+
+curLevel = 0
 enter(lev[curLevel].startRoom)
 command = raw_input(">>")
 
@@ -94,21 +101,27 @@ while True:
 		
 	elif(command == "DEBUG"):
 		print "---DEBUG---"
+		# print len(lev)
 		for eqp in shared.player.equipment:
 			print eqp.name
 		print "-----"
 		command = raw_input(">>")
 	
 	elif(command == shared.winPhrase[0] and shared.currentRoom.name == shared.winRoom[0]):
-		print "-----"
-		print "Level Complete!"
-		print "-----"
-		print ""
-		curLevel = curLevel+1
-		print "Level " + str(curLevel) + ": " + "the title text, soon to be dynamic"
-		print "-----"
-		enter(lev[curLevel].startRoom)
-		command = raw_input(">>")
+		curLevel = curLevel + 1
+		if( curLevel < len(lev) ):
+			print "-----"
+			print "Level Complete!"
+			print "-----"
+			print ""
+			print "Level " + str(curLevel) + ": " + "the title text, soon to be dynamic"
+			print "-----"
+			enter(lev[curLevel].startRoom)
+			command = raw_input(">>")
+		else:
+			raw_input("You are victorious.  Press any key to quit")
+			break
+			
 	
 	elif(command == "FART"):
 		print ""

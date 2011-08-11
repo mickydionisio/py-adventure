@@ -174,14 +174,14 @@ bus.connect = [None, None, None, corner]
 
 
 # add all the stuff to lev
-lev0 = Level(0)
+lev = Level(0)
 
-lev0.room = [bedroom, hall, livingroom, den, kitchen, yard, corner, bus]
-lev0.item = [pencil, calc, skittle, coat, dollar, dictionary, coffee, nickel, knife, pipe, button]
-lev0.vObject = [desk, coatrack, bookshelf, coffeetable, sofa, box, snowman, coffeeStand, busSeat]
+lev.room = [bedroom, hall, livingroom, den, kitchen, yard, corner, bus]
+lev.item = [pencil, calc, skittle, coat, dollar, dictionary, coffee, nickel, knife, pipe, button]
+lev.vObject = [desk, coatrack, bookshelf, coffeetable, sofa, box, snowman, coffeeStand, busSeat]
 
 # set startroom
-lev0.startRoom = bedroom
+lev.startRoom = bedroom
 
 
 
