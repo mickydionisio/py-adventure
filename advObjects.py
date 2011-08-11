@@ -48,7 +48,7 @@ class Room(BaseObject):
 		return None
 
 # Door direction enum
-from enum import enum
+from tools.enum import enum
 Direc = enum('N', 'S', 'E', 'W')
 			
 # character superclass
