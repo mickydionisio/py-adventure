@@ -4,26 +4,28 @@
 #
 ######
 
-
-from advObjects import *
-from rooms import *
-from traversal import *
-
+# Import modules
 import string
 
-# Init Starting Room
+from advObjects import *
+from levels import *
+from traversal import *
+
+# import levels.level0
 import shared
 		
 ## Welcome / Intro
-
 print "What is your name?"
-
 shared.player.name = raw_input(">>")
-
 print "-----"
 print "Welcome " + shared.player.name + "!"
 
-enter(bedroom)
+
+# Initialize Levels & starting point
+lev = [level0.lev0, level1.lev1]
+curLevel = 0
+
+enter(lev[curLevel].startRoom)
 command = raw_input(">>")
 
 ######
@@ -98,9 +100,14 @@ while True:
 		command = raw_input(">>")
 	
 	elif(command == shared.winPhrase[0] and shared.currentRoom.name == shared.winRoom[0]):
-		print ""
+		print "-----"
 		print "Level Complete!"
+		print "-----"
 		print ""
+		curLevel = curLevel+1
+		print "Level " + str(curLevel) + ": " + "the title text, soon to be dynamic"
+		print "-----"
+		enter(lev[curLevel].startRoom)
 		command = raw_input(">>")
 	
 	elif(command == "FART"):
@@ -123,6 +130,3 @@ while True:
 		print "Invalid Command!"
 		print ""
 		command = raw_input(">>")
-
-		
-		
