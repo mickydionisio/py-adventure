@@ -1,6 +1,6 @@
 ######
 #
-# This is where the Story lives
+# Example level file
 #
 ######
 
@@ -94,7 +94,10 @@ coffeeStand.description = "The sign reads: '5 cents per mug'"
 busSeat = VObject("SEAT")
 busSeat.description = "Right up front, and looks very comfortable. Type SIT to rest your rump."
 
-# NPCs
+
+
+# NPCs ... currently not being used
+
 CoffeeGirl = NPC("GIRL")
 	#print Victor.sayHello()
 	#print Victor.health
@@ -168,6 +171,17 @@ bus.npc = [CoffeeGirl]
 bus.vObject = [busSeat]
 bus.door = [0,0,0,1]
 bus.connect = [None, None, None, corner]
+
+
+# add all the stuff to lev
+lev0 = Level(0)
+
+lev0.room = [bedroom, hall, livingroom, den, kitchen, yard, corner, bus]
+lev0.item = [pencil, calc, skittle, coat, dollar, dictionary, coffee, nickel, knife, pipe, button]
+lev0.vObject = [desk, coatrack, bookshelf, coffeetable, sofa, box, snowman, coffeeStand, busSeat]
+
+# set startroom
+lev0.startRoom = bedroom
 
 
 

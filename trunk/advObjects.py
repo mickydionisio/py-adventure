@@ -47,9 +47,18 @@ class Room(BaseObject):
 		# if it doesn't find one
 		return None
 
-# Door direction enum
+# Movement Direction Enum
 from tools.enum import enum
 Direc = enum('N', 'S', 'E', 'W')
+
+class Level:
+	def __init__(self, idx):
+		self.num = idx
+		
+	room = []
+	item = []
+	vObject = []
+	startRoom = None
 			
 # character superclass
 class Character(BaseObject):
